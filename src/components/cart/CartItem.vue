@@ -14,9 +14,9 @@
 		<td data-th="Price">{{ cartItem.price }}</td>
 		<td data-th="Quantity">
 			<input type="number" class="form-control text-center"
-				:value="cartItem.quantity"
-				@input="updateQuantity"
-				min="0">
+			       :value="cartItem.quantity"
+			       @input="updateQuantity"
+			       min="0">
 		</td>
 		<td data-th="Subtotal" class="text-center">{{ subtotal }} IDT</td>
 		<td class="actions" data-th="">
@@ -27,6 +27,7 @@
 
 <script>
 	import { mapActions } from 'vuex';
+
 	export default {
 		props: ['cartItem'],
 		computed: {

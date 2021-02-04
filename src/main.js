@@ -15,8 +15,8 @@ firebaseListener(authStatusChange);
 
 
 const router = new VueRouter({
-	mode: 'history',
-	routes
+    mode: 'history',
+    routes
 });
 
 // router.beforeEach((to, from, next) => {
@@ -29,18 +29,18 @@ const router = new VueRouter({
 
 
 new Vue({
-  el: '#app',
-  router,
-  store,
-  render: h => h(App)
+    el: '#app',
+    router,
+    store,
+    render: h => h(App)
 })
 
 function authStatusChange(loggedIn, user) {
-	if (store) {
-		store.commit('AUTH_STATUS_CHANGE');
-		if (user) {
-			store.dispatch('getShoppingCart', {uid: user.uid, currentCart: store.getters.cartItemList});
-		}
-	}
+    if (store) {
+        store.commit('AUTH_STATUS_CHANGE');
+        if (user) {
+            store.dispatch('getShoppingCart', { uid: user.uid, currentCart: store.getters.cartItemList });
+        }
+    }
 
 }
