@@ -43,7 +43,7 @@ git clone https://github.com/hahahahao/dotory.git
 git add *.* : make indexs of all files and folders 
 git commit -m "write comments here blablablabla"
 git remote add origin https://github.com/hahahahao/dotory.git
-git push -u origin main
+git push -u origin master
 ```
 
 
