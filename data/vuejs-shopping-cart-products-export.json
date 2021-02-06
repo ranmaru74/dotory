@@ -3,55 +3,55 @@
   "id" : 1,
   "price" : 5000,
   "quantity" : 100,
-  "thumbnail_url" : "https://photos.google.com/photo/AF1QipMp-0rD-58hHha200oVoKwn0GoMUgFnigm8Quo",
+  "thumbnail_url" : "indie_group_1",
   "title" : "블링블링 (2021)"
 }, {
   "description" : "미래 방탄입니다. 특징은 잘생긴 얼굴입니다. 투자 하면 대박 날것입니다~",
   "id" : 2,
   "price" : 1199,
   "quantity" : 15,
-  "thumbnail_url" : "https://photos.google.com/photo/AF1QipNqJJvuVwSJ4gArVjyBv_OZRVWDMNJUqXPjQYQ",
+  "thumbnail_url" : "indie_group_2",
   "title" : "방타니"
 }, {
   "description" : "특징은 잘생긴 얼굴입니다. 투자 하면 대박 날것입니다~",
   "id" : 3,
   "price" : 1800,
   "quantity" : 1,
-  "thumbnail_url" : "https://photos.google.com/photo/AF1QipNRnCXsBNo4oUP0ZIBihDwG2F2hKuFKax0kx44",
+  "thumbnail_url" : "indie_group_3",
   "title" : "인디333"
 }, {
   "description" : "특징은 잘생긴 얼굴입니다. 투자 하면 대박 날것입니다~",
   "id" : 4,
   "price" : 1099,
   "quantity" : 2,
-  "thumbnail_url" : "https://photos.google.com/photo/AF1QipOarsMfkWBXHtsPs5akTSb6_U_1egJCCn3dXKU",
+  "thumbnail_url" : "indie_group_4",
   "title" : "Retina MacBook Pro 13 inch MF841"
 }, {
   "description" : "특징은 잘생긴 얼굴입니다. 투자 하면 대박 날것입니다~",
   "id" : 5,
   "price" : 656,
   "quantity" : 5,
-  "thumbnail_url" : "https://photos.google.com/photo/AF1QipO2VymLQDHl8uGL0iMqxqG-9lc1hzU6IyamQiQ",
+  "thumbnail_url" : "indie_group_5",
   "title" : "인디333"
 }, {
   "description" : "특징은 잘생긴 얼굴입니다. 투자 하면 대박 날것입니다~",
   "id" : 6,
   "price" : 888,
   "quantity" : 4,
-  "thumbnail_url" : "https://photos.google.com/photo/AF1QipOVrdhFTxagRtfPuxREYTr9kBnt5OX7P9FUkyc",
+  "thumbnail_url" : "indie_group_6",
   "title" : "Macbook Retina 13.3' ME865LL"
 }, {
   "description" : "특징은 잘생긴 얼굴입니다. 투자 하면 대박 날것입니다~",
   "id" : 7,
   "price" : 1999,
   "quantity" : 0,
-  "thumbnail_url" : "https://www.dropbox.com/s/miym588nx2lscqt/img7.jpg?raw=1",
+  "thumbnail_url" : "indie_group_1",
   "title" : "인디333"
 }, {
   "description" : "특징은 잘생긴 얼굴입니다. 투자 하면 대박 날것입니다~",
   "id" : 8,
   "price" : 999.9,
   "quantity" : 100,
-  "thumbnail_url" : "https://www.dropbox.com/s/wbwqjy22lqjc3jl/img8.jpg?raw=1",
+  "thumbnail_url" : "indie_group_2",
   "title" : "인디333"
 } ]

@@ -12,6 +12,7 @@ module.exports = {
   rules: {
     'no-console': 'off',
     "no-mixed-spaces-and-tabs": 0,
+    "no-unused-vars": ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }]
   },
   parserOptions: {
     parser: "babel-eslint",
