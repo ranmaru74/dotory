@@ -41,10 +41,6 @@
 			}
 		},
 		created() {
-			EventBus.$on("notify", notification => {
-				this.message = notification.message;
-				console.log(this.message);
-			});
 			this.getInfo();
 		}
 	}

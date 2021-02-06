@@ -5,6 +5,7 @@ import cart from './modules/cart';
 import products from './modules/products';
 import auth from './modules/auth';
 import messages from './modules/messages';
+import hederaAccount from './modules/hederaAccount';
 
 import * as actions from './actions';
 
@@ -16,6 +17,7 @@ export default new Vuex.Store({
         auth,
         cart,
         products,
-        messages
+        messages,
+        hederaAccount
     }
 });

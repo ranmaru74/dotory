@@ -48,6 +48,10 @@
 			changeDisplay(isList) {
 				this.displayList = isList;
 			}
+		},
+		created() {
+			console.log('Main created');
+			console.log(this.$store.getters.getAccounts);
 		}
 	}
 </script>

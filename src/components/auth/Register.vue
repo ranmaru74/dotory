@@ -69,11 +69,17 @@
 					password: this.password
 				}
 				try {
+					console.log('before registerByEmail');
 					await this.registerByEmail(data)
+					console.log('after registerByEmail');
 					const account = await accountCreate(this.email)
 					console.log('account')
 					console.log(account)
 					const value = await this.saveAccount(account)
+					await this.$store.dispatch('listenToAccountList');
+					console.log('value');
+					console.log(value);
+					this.$store.commit('setCurrentAccount', account);
 					this.clearMessage();
 					await this.$router.push({ name: 'mainpage' });
 					this.isLoading = false
@@ -110,6 +116,10 @@
 			// 		this.isLoading = false
 			// 	})
 			// }
+		},
+		created() {
+			console.log('Register created');
+			console.log(this.$store.getters.getAccounts);
 		}
 	}
 </script>

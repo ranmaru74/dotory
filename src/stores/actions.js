@@ -37,10 +37,26 @@ export function loginWithEmail(_, { email, password }) {
 }
 
 export function listenToProductList({ commit }) {
+    console.log('listenToProductList called');
     return ref.child("products").on('value', (products) => {
+        console.log('getProducts from DB');
         commit('UPDATE_PRODUCT_LIST', products.val());
         //console.log("products.val() = " + products.val());
     });
+}
+
+export function listenToAccountList({ commit }) {
+    console.log('listenToAccountList called');
+    return ref.child('account').on('value', (accounts) => {
+        console.log('getAccount from DB');
+        console.log(accounts.val());
+        const data = accounts.val();
+        commit('setAccount', {});
+        for(let key in data) {
+            console.log(data[key]);
+            commit('setAccount', data[key]);
+        }
+    })
 }
 
 export function getShoppingCart({ commit }, { uid, currentCart }) {
