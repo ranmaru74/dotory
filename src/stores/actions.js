@@ -23,6 +23,10 @@ export const registerByEmail = (_, { email, password }) => {
     return firebaseAuth().createUserWithEmailAndPassword(email, password);
 }
 
+export const saveAccount = (_, account ) => {
+    return ref.child('account').push(account)
+}
+
 export const logout = ({ commit }) => {
     commit('SET_CART', []); // clear current cart
     return firebaseAuth().signOut();

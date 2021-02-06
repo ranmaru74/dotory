@@ -6,6 +6,7 @@ import store from './stores/store';
 import { firebaseListener } from './config/firebaseConfig';
 import './assets/styles/app.scss'
 
+require("dotenv").config();
 import App from './App.vue';
 
 Vue.use(VueRouter);

@@ -50,6 +50,7 @@
 
 <script>
 	import { mapActions } from 'vuex';
+	import { accountCreate } from "@/service/accountCreate";
 
 	export default {
 		data() {
@@ -60,29 +61,55 @@
 			}
 		},
 		methods: {
-			...mapActions(['clearMessage', 'addMessage', 'registerByEmail']),
-			onSubmit() {
+			...mapActions(['clearMessage', 'addMessage', 'registerByEmail', 'saveAccount']),
+			async onSubmit() {
 				this.isLoading = true
 				let data = {
 					email: this.email,
 					password: this.password
 				}
-				this.registerByEmail(data).then(() => {
+				try {
+					await this.registerByEmail(data)
+					const account = await accountCreate(this.email)
+					console.log('account')
+					console.log(account)
+					const value = await this.saveAccount(account)
 					this.clearMessage();
-					this.$router.push({ name: 'mainpage' });
-				})
-						.catch((error) => {
-							// console.log('register error', error);
-							let message_obj = {
-								message: error.message,
-								messageClass: "danger",
-								autoClose: true
-							}
-							this.addMessage(message_obj);
-						}).then(() => {
+					await this.$router.push({ name: 'mainpage' });
 					this.isLoading = false
-				})
+				} catch (error) {
+					let message_obj = {
+						message: error.message,
+						messageClass: "danger",
+						autoClose: true
+					}
+					await this.addMessage(message_obj);
+					console.log(message_obj);
+					this.isLoading = false;
+				}
 			}
+
+			// onSubmit() {
+			// 	this.isLoading = true
+			// 	let data = {
+			// 		email: this.email,
+			// 		password: this.password
+			// 	}
+			// 	this.registerByEmail(data).then(() => {
+			// 		this.clearMessage();
+			// 		this.$router.push({ name: 'mainpage' });
+			// 	}).catch((error) => {
+			// 		// console.log('register error', error);
+			// 		let message_obj = {
+			// 			message: error.message,
+			// 			messageClass: "danger",
+			// 			autoClose: true
+			// 		}
+			// 		this.addMessage(message_obj);
+			// 	}).then(() => {
+			// 		this.isLoading = false
+			// 	})
+			// }
 		}
 	}
 </script>

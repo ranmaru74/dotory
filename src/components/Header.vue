@@ -15,15 +15,9 @@
 				<span class="navbar-toggler-icon"></span>
 			</button>
 
-
-			<div>
-				{{ userEmail }}
-			</div>
-
-
 			<div class="collapse navbar-collapse" id="navbarTop" :class="{show: isNavOpen}">
 				<ul class="navbar-nav mr-auto">
-
+					<router-link to="/account" tag="li" class="nav-item"><a class="nav-link">{{ userEmail }}</a></router-link>
 				</ul>
 				<ul class="nav navbar-nav">
 					<router-link to="/login" tag="li" v-if="!isLoggedIn" class="nav-item" active-class="active">
