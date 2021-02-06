@@ -3,7 +3,7 @@ import VueRouter from 'vue-router';
 
 import { routes } from './routes';
 import store from './stores/store';
-import { firebaseListener } from './config/firebaseConfig';
+import { ref, firebaseListener } from './config/firebaseConfig';
 import './assets/styles/app.scss'
 
 require("dotenv").config();
@@ -42,6 +42,17 @@ function authStatusChange(loggedIn, user) {
 
         store.commit('AUTH_STATUS_CHANGE');
         if (user) {
+            // ref.child('account').once('value', (accounts) => {
+            //     const data = accounts.val();
+            //     store.commit('setAccount', {});
+            //     for(let key in data) {
+            //         store.commit('setAccount', data[key]);
+            //         if(user.email == data[key].wallet) {
+            //             store.commit('setCurrentAccount', data[key]);
+            //         }
+            //     }
+            // })
+            store.dispatch('listenToAccountList', user)
             store.dispatch('getShoppingCart', { uid: user.uid, currentCart: store.getters.cartItemList });
         }
     }

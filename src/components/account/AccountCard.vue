@@ -2,12 +2,12 @@
 	<div class="panel panel-success">
 		<div class="panel-heading">
 			<h3 class="panel-title">
-				{{ account.account.wallet }}
+				{{ account.wallet }}
 			</h3>
 		</div>
 		<div class="panel-body" style="word-wrap: break-word">
 			<p>Account Id : {{ account.accountId }} </p>
-			<p>Private Key : {{ account.account.privateKey }}</p>
+			<p>Private Key : {{ account.privateKey }}</p>
 			<p>HBar Balance : {{ balance }}</p>
 		</div>
 	</div>

@@ -1,4 +1,5 @@
 import { ref, firebaseAuth } from '../config/firebaseConfig';
+import store from "@/stores/store";
 
 export const updateCart = ({
                                commit
@@ -45,16 +46,23 @@ export function listenToProductList({ commit }) {
     });
 }
 
-export function listenToAccountList({ commit }) {
+export function listenToAccountList({ commit }, user) {
     console.log('listenToAccountList called');
-    return ref.child('account').on('value', (accounts) => {
-        console.log('getAccount from DB');
-        console.log(accounts.val());
+    // return ref.child('account').on('value', (accounts) => {
+    //     const data = accounts.val();
+    //     commit('setAccount', {});
+    //     for(let key in data) {
+    //         commit('setAccount', data[key]);
+    //     }
+    // })
+    ref.child('account').once('value', (accounts) => {
         const data = accounts.val();
-        commit('setAccount', {});
+        store.commit('setAccount', {});
         for(let key in data) {
-            console.log(data[key]);
-            commit('setAccount', data[key]);
+            store.commit('setAccount', data[key]);
+            if(user.email == data[key].wallet) {
+                store.commit('setCurrentAccount', data[key]);
+            }
         }
     })
 }

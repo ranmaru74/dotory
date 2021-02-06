@@ -63,27 +63,54 @@
 		},
 		methods: {
 			...mapActions(['addMessage', 'clearMessage', 'loginWithEmail']),
-			onSubmit() {
-				this.isLoading = true
-				let data = {
-					email: this.email,
-					password: this.password
-				}
-				this.loginWithEmail(data).then(() => {
+			// onSubmit() {
+			// 	this.isLoading = true
+			// 	let data = {
+			// 		email: this.email,
+			// 		password: this.password
+			// 	}
+			// 	this.loginWithEmail(data).then(() => {
+			// 		console.log('after loginWithEmail')
+			// 		console.log(this.$store.getters.getCurrentAccount);
+			// 		this.clearMessage();
+			// 		this.$router.push({
+			// 			name: 'mainpage'
+			// 		});
+			// 	}).catch((error) => {
+			// 		let message_obj = {
+			// 			message: error.message,
+			// 			messageClass: "danger",
+			// 			autoClose: true
+			// 		}
+			// 		this.addMessage(message_obj);
+			// 	}).then(() => {
+			// 		this.isLoading = false
+			// 	})
+			// }
+
+			async onSubmit() {
+				try {
+					this.isLoading = true;
+					let data = {
+						email: this.email,
+						password: this.password
+					}
+					await this.loginWithEmail(data);
+					console.log('after loginWithEmail');
+
 					this.clearMessage();
-					this.$router.push({
-						name: 'mainpage'
-					});
-				}).catch((error) => {
+					await this.$router.push({ name: 'mainpage' })
+				} catch (error) {
 					let message_obj = {
 						message: error.message,
 						messageClass: "danger",
 						autoClose: true
 					}
+					console.log('login submit error');
+					console.log(message_obj);
 					this.addMessage(message_obj);
-				}).then(() => {
 					this.isLoading = false
-				})
+				}
 			}
 		}
 	}
